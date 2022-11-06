@@ -1,0 +1,9 @@
+.login{
+  width: auto;
+  display: block;
+  margin: 100px ;
+  padding: 100px;
+  border: solid 5px ;
+  border-radius: 5px;
+  position: absolute;
+}
