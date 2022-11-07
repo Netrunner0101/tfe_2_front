@@ -7,8 +7,9 @@ export interface Warehouse {
   weight: undefined | number,
   dimension : undefined | string,
   adress : undefined | string,
+  city : undefined | string,
+  postal_code : undefined | string,
   inbound_date : undefined | Date,
   outbound_date: undefined | Date,
   remarks : undefined | string,
-  delivery : undefined | Delivery,
 }

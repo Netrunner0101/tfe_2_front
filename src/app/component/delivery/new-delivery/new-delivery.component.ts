@@ -51,7 +51,9 @@ export class NewDeliveryComponent implements OnInit {
       remarks: this.newDeliveryForm.value.remarks ,
     }
     this.delService.create(newDelivery)
-    console.log("New delivery create"+ newDelivery)
+    this.router.navigate(['/delivery']).then(() => {
+      window.location.reload();
+    });
   }
 
 }

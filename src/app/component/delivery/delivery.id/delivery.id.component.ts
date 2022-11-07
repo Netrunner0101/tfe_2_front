@@ -32,6 +32,8 @@ export class DeliveryIdComponent implements OnInit {
   //Data binding for transporteur
   warehouse:any ;
 
+  panelOpenState = false;
+
   // Initial formgroup
   updateDeliveryForm= new FormGroup({
     number_package : new FormControl(''),
@@ -47,6 +49,11 @@ export class DeliveryIdComponent implements OnInit {
     arrival_date: new FormControl(''),
     remarks:new FormControl(''),
   });
+
+  tiles = [
+    {text: 'Information', cols: 2},
+    {text: 'Modification', cols: 2},
+  ];
 
   constructor(private warehouseServ:WarehouseService ,
               private transServ:TransporterService,

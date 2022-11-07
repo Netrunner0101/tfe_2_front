@@ -38,6 +38,7 @@ export class DeliveryComponent implements OnInit {
     console.log('Interceptor : '+ sessionStorage.getItem('token'));
     console.log("Delivery data : "+ this.DeliveryData);
     console.log("All : "+ this.allDelivery());
+    this.allDelivery();
   }
 
   allDelivery(){

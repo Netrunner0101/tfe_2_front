@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {TransporterService} from "../../service/transporter.service";
+import {Router} from "@angular/router";
+import {WarehouseService} from "../../service/warehouse.service";
 
 @Component({
   selector: 'app-warehouse',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WarehouseComponent implements OnInit {
 
-  constructor() { }
+  WhData: any = [];
+
+  constructor(private whServ:WarehouseService,private router:Router) { }
 
   ngOnInit(): void {
+    console.log('Interceptor : '+ sessionStorage.getItem('token'));
+    console.log("Customer data : "+ this.WhData);
+    this.AllWarehouse();
   }
+
+  AllWarehouse(){
+    this.whServ.AllWarehouse().subscribe((data: { })=>{
+      console.log("Service Data:" + data);
+      this.WhData = data;
+      console.log("Transporter Data from service :" + this.WhData);
+    })
+  }
+
+  deleteWarehouse(id_warehouse:any){
+    this.whServ.delete(id_warehouse);
+  }
+
 
 }

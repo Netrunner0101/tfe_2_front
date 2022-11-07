@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { AuthenticationComponent } from './component/authentication/authentication.component';
 import { CustomerComponent } from './component/customer/customer.component';
@@ -20,6 +19,23 @@ import {MatButtonModule} from "@angular/material/button";
 import {HTTP_INTERCEPTORS, HttpClientModule, HttpInterceptor} from "@angular/common/http";
 import {TokenInterceptorInterceptor} from "./token-interceptor.interceptor";
 import {AuthguardGuard} from "./component/authentication/authguard.guard";
+import {MatTableModule} from "@angular/material/table";
+import {DeliveryIdComponent} from "./component/delivery/delivery.id/delivery.id.component";
+import {NewDeliveryComponent} from "./component/delivery/new-delivery/new-delivery.component";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatCardModule} from "@angular/material/card";
+import {MatSelectModule} from "@angular/material/select";
+import {CustomeridComponent} from "./component/customer/customerid/customerid.component";
+import {MatExpansionModule} from "@angular/material/expansion";
+import { NewCustomerComponent } from './component/customer/new-customer/new-customer.component';
+import {MatGridListModule} from "@angular/material/grid-list";
+import { TransporteridComponent } from './component/transporter/transporterid/transporterid.component';
+import { NewTransporterComponent } from './component/transporter/new-transporter/new-transporter.component';
+import { NewWarehouseComponent } from './component/warehouse/new-warehouse/new-warehouse.component';
+import { WarehouseidComponent } from './component/warehouse/warehouseid/warehouseid.component';
+import { NewQuotationsComponent } from './component/quotations/new-quotations/new-quotations.component';
+import { QuotationsIdComponent } from './component/quotations/quotations-id/quotations-id.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +45,17 @@ import {AuthguardGuard} from "./component/authentication/authguard.guard";
     DeliveryComponent,
     QuotationsComponent,
     TransporterComponent,
-    WarehouseComponent
+    WarehouseComponent,
+    DeliveryIdComponent,
+    NewDeliveryComponent,
+    CustomeridComponent,
+    NewCustomerComponent,
+    TransporteridComponent,
+    NewTransporterComponent,
+    NewWarehouseComponent,
+    WarehouseidComponent,
+    NewQuotationsComponent,
+    QuotationsIdComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +71,12 @@ import {AuthguardGuard} from "./component/authentication/authguard.guard";
     MatInputModule,
     MatButtonModule,
     AppRoutingModule,
+    MatTableModule,
+    MatTabsModule,
+    MatCardModule,
+    MatSelectModule,
+    MatExpansionModule,
+    MatGridListModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,useClass:TokenInterceptorInterceptor, multi:true},
